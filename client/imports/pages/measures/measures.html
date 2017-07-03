@@ -1,0 +1,18 @@
+<ion-header>
+	<ion-navbar color="whatsapp">
+		<ion-title>Mini-dash</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="chats-page-content">
+	<button ion-button large round color="{{measure.status}}" *ngFor="let measure of measures | async">
+		<ion-icon name="{{measure.icon}}"></ion-icon>&nbsp;
+		<!-- a href="/measures/{{measure._id}}">{{measure.name}}</a -->
+		{{measure.name}}&nbsp;
+		<ion-badge id="measure-badge">{{measure.value}}</ion-badge<ion-badge>
+	</button>
+</ion-content>
+
+<ion-footer>
+   <div class="title">http://github.com/ddjohn/minidash</div>
+</ion-footer>
