@@ -1,6 +1,6 @@
 # minidash
 
-## install and run
+## install
 
 Install meteor:
 > $ curl https://install.meteor.com/ | sh
