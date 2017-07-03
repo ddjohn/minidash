@@ -6,7 +6,7 @@ export interface Measure {
   epoch?: Date; 
   icon: string;
   name: string;
-  value: number;
+  value: string;
   status: string;
 }
 
