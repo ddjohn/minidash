@@ -8,6 +8,7 @@ export interface Measure {
   name: string;
   value: string;
   status: string;
+  details: string;
 }
 
 export interface Message {

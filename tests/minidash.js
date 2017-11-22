@@ -9,6 +9,6 @@ if(process.argv.length !== 6) {
 	process.exit(1);	
 }
 
-request.post('http://localhost:3000//measure/' + process.argv[2] + '/' + process.argv[3] + '/' + process.argv[4] + '/' + process.argv[5], 'message', function (error, response, body) {
+request.post({url: 'http://localhost:3000//measure/' + process.argv[2] + '/' + process.argv[3] + '/' + process.argv[4] + '/' + process.argv[5], form: {msg: 'message'}}, function (error, response, body) {
 	console.log(body);
 });

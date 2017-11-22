@@ -13,6 +13,8 @@ import template from './measures.html';
 })
 export class MeasuresPage implements OnInit {
   measures: Observable<Measure[]>;
+  toggle:any[] = {};
+
  
   constructor(private navCtrl: NavController) {}
  

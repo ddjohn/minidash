@@ -10,7 +10,9 @@ Clone the repo:
 
 Build 'minidash':
 > $ cd minidash
+
 > $ meteor update
+
 > $ meteor npm install
 
 
@@ -39,7 +41,7 @@ where:
 - [x] Two way databinding of a minidash
 - [x] Web request to populate data
 - [x] Add a healt check measure (random)
-- [ ] Show details
+- [x] Show details
 - [ ] Support for Jenkins
 - [ ] Support for Jira
 
