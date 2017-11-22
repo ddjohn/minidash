@@ -11,12 +11,17 @@
 			{{measure.name}}&nbsp;
 			<ion-badge id="measure-badge">{{measure.value}}</ion-badge<ion-badge>
 		</div>
+	</button>
+	<div *ngFor="let measure of measures | async">
 		<div [hidden]="!toggle[measure._id]">
+			<hr/>
+				
+			<b>{{measure.name}}</b>
 			<pre>
 			{{measure.details}}
 			</pre>
 		</div>
-	</button>
+	</div>
 </ion-content>
 
 <ion-footer>
