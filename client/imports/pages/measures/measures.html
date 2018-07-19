@@ -5,16 +5,33 @@
 </ion-header>
 
 <ion-content class="chats-page-content">
-	<button ion-button large round color="{{measure.status}}" *ngFor="let measure of measures | async">
-		<ion-icon name="{{measure.icon}}"></ion-icon>&nbsp;
-		<!-- a href="/measures/{{measure._id}}">{{measure.name}}</a -->
-		{{measure.name}}&nbsp;
-		<ion-badge id="measure-badge">{{measure.value}}</ion-badge<ion-badge>
-		<br>
-		<small>Ten seconds ago</small>
+	<button ion-button large round color="{{measure.status}}" *ngFor="let measure of measures | async" (click)="toggle[measure._id] = !toggle[measure._id]">
+		<div [hidden]="toggle[measure._id]">
+			<ion-icon name="{{measure.icon}}"></ion-icon>&nbsp;
+			{{measure.name}}&nbsp;
+			<ion-badge id="measure-badge">{{measure.value}}</ion-badge<ion-badge>
+		</div>
 	</button>
+	<div *ngFor="let measure of measures | async">
+		<div [hidden]="!toggle[measure._id]">
+			<hr/>
+				
+			<b>{{measure.name}}</b>
+			<pre>
+			{{measure.details}}
+			</pre>
+		</div>
+	</div>
 </ion-content>
 
 <ion-footer>
    <div class="title">http://github.com/ddjohn/minidash</div>
+   <small>
+       <b>Legend:</b>
+       <button class="label label-success">&nbsp;</button> Success
+       <button class="label label-warning">&nbsp;</button> Warning
+       <button class="label label-danger">&nbsp;</button> Error
+       <button class="label label-primary">&nbsp;</button> Information
+       <div class="title">http://github.com/ddjohn/minidash</div>
+   </small>
 </ion-footer>
