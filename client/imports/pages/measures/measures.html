@@ -11,26 +11,28 @@
 			{{measure.name}}&nbsp;
 			<ion-badge id="measure-badge">{{measure.value}}</ion-badge<ion-badge>
 		</div>
+		<div [hidden]="!toggle[measure._id]">
+			<ion-icon name="{{measure.icon}}"></ion-icon>&nbsp;
+			{{measure.name}}&nbsp;
+			<ion-badge id="measure-badge">expanded</ion-badge<ion-badge>
+		</div>
 	</button>
 	<div *ngFor="let measure of measures | async">
 		<div [hidden]="!toggle[measure._id]">
 			<hr/>
-				
 			<b>{{measure.name}}</b>
-			<pre>
-			{{measure.details}}
-			</pre>
+			<pre>{{measure.details}}</pre>
 		</div>
 	</div>
 </ion-content>
 
 <ion-footer>
-   <small>
+   <!-- small-->
        <b>Legend:</b>
-       <button class="label label-success">&nbsp;</button> Success
-       <button class="label label-warning">&nbsp;</button> Warning
-       <button class="label label-danger">&nbsp;</button> Error
-       <button class="label label-primary">&nbsp;</button> Information
-       <div class="title">http://github.com/ddjohn/minidash</div>
-   </small>
+       <button ion-button small color="secondary">&nbsp;</button> Success
+       <button ion-button small color="warning">&nbsp;</button> Warning
+       <button ion-button small color="danger">&nbsp;</button> Error
+       <button ion-button small color="primary">&nbsp;</button> Information
+       <button ion-button small color="light">http://github.com/ddjohn/minidash</button> 
+   <!-- /small -->
 </ion-footer>
