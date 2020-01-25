@@ -33,9 +33,9 @@ SyncedCron.add({
 	},
 	job: function() {
 		console.log("Now");
+		send();
 		return 7;
 	}
 });
-
 
 //SyncedCron.start();
